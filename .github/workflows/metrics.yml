@@ -19,6 +19,6 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}   # PAT im Repo als Secret
           # Wenn das Repo NICHT dein Profil-Repo <USER>/<USER> ist,
           # setze deinen Benutzer explizit:
-          user: <DEIN_GITHUB_USERNAME>
+          user: hannahngb2
           base: header, activity, community, repositories, metadata
 
