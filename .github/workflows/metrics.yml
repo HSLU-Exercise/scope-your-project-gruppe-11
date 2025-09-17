@@ -1,12 +1,24 @@
 name: Metrics
+
 on:
-  schedule: [{cron: "0 * * * *"}]  # läuft jede Stunde
-  workflow_dispatch:               # manuelles Auslösen möglich
+  workflow_dispatch:        # manuell starten
+  schedule:
+    - cron: "0 * * * *"     # stündlich
+
+# falls dein Repo private ist oder du strengere Orgrechte hast,
+# explizit minimale Rechte setzen:
+permissions:
+  contents: read
+
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          token: ${{ secrets.METRICS_TOKEN }}
+          token: ${{ secrets.METRICS_TOKEN }}   # PAT im Repo als Secret
+          # Wenn das Repo NICHT dein Profil-Repo <USER>/<USER> ist,
+          # setze deinen Benutzer explizit:
+          user: <DEIN_GITHUB_USERNAME>
           base: header, activity, community, repositories, metadata
+
