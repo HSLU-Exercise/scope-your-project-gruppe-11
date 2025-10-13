@@ -12,3 +12,4 @@ und zur transparenten Überwachung des Energieverbrauchs.
 
 **Teamziele:**  
 Entwicklung einer intuitiven, sicheren und erweiterbaren Smart-Home-Lösung.
+Update: Änderung zur Messung der Cycle Time
