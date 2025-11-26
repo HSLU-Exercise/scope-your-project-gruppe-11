@@ -1,0 +1,14 @@
+name: Demo Failure
+on: workflow_dispatch  # Wichtig: Erlaubt den Start per "Knopfdruck" (CLI/Web)
+
+jobs:
+  break-production:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kritischer Prozess startet...
+        run: echo "Starte Deployment..."
+
+      - name: Unerwarteter Fehler
+        run: |
+          echo "ERROR: Connection timeout to Production DB!"
+          exit 1  # Das hier erzwingt den roten Fehler
